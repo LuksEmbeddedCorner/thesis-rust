@@ -9,7 +9,3 @@ pub mod ring;
 mod transmit;
 
 const MAX_TRANSMISSION_UNIT: usize = 1522; // VLAN Frame max size
-
-mod sealed {
-    pub trait Sealed {}
-}

@@ -1,6 +1,6 @@
 use crate::gpio::{output_modes::PushPull, Alternate, Pin};
 
-use super::sealed::Sealed;
+use crate::sealed::Sealed;
 
 pub struct MiiPins {
     pub transmit_clk: Pin<Alternate<PushPull, 11>, 'C', 3>,
