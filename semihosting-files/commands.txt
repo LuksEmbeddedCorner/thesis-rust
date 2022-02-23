@@ -1,0 +1,9 @@
+To run the example, start open_ocd in one terminal using:
+
+> openocd
+
+You can then build and start the example, you need to run these commands in another terminal:
+
+> cargo build --example file_access
+> arm-none-eabi-gdb -x openocd.gdb -q target/thumbv7m-none-eabi/debug/examples/file_access
+

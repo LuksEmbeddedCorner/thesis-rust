@@ -1,0 +1,7 @@
+[workspace]
+
+members = [
+    "stm32f207-hal",
+    "bezier",
+    "semihosting-files"
+]

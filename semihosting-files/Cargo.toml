@@ -1,0 +1,26 @@
+[package]
+name = "semihosting-files"
+version = "0.1.4"
+edition = "2021"
+license = "MIT OR Apache-2.0"
+keywords = ["embedded", "no-std", "semihosting", "cortex-m"]
+categories = ["embedded", "no-std", "filesystem"]
+description = "Access files of the host system during semihosting"
+documentation = "https://docs.rs/semihosting-files"
+repository = "https://github.com/LuksEmbeddedCorner/semihosting-files"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+# FIXME Wait for a working core_io version
+# core_io = { version = "0.1.20210325", optional = true }
+cortex-m-semihosting = "0.3.7"
+cstr_core = { version = "0.2.4", default_features = false }
+
+# These are just used for the examples
+[dev-dependencies]
+cortex-m = "0.7.3"
+cortex-m-rt = "0.7.0"
+cortex-m-semihosting = "0.3.3"
+panic-halt = "0.2.0"
+stm32f2 = { version = "0.14.0", features = ["stm32f217", "rt"]}

@@ -1,0 +1,48 @@
+[package]
+name = "stm32f207-hal"
+version = "0.1.0"
+edition = "2018"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[features]
+default = ["ethernet"]
+ethernet = ["smoltcp", "vcell"]
+
+[dependencies]
+cortex-m = "0.7.3"
+nb = "1.0.0"
+paste = "1.0.5"
+
+[dependencies.embedded-hal]
+version = "0.2.6"
+features = ["unproven"]
+
+[dependencies.stm32f2]
+version = "0.14.0"
+features = ["stm32f217", "rt"]
+
+[dependencies.void]
+version = "1.0.2"
+default-features = false
+
+[dependencies.smoltcp]
+version = "0.8.0"
+default-features = false
+optional = true
+features = ["medium-ethernet", "proto-ipv4", "socket-icmp", "socket-dhcpv4", "log"]
+
+[dependencies.vcell]
+version = "0.1.3"
+optional = true
+
+[dev-dependencies]
+cortex-m-rt = "0.7.0"
+panic-halt = "0.2.0"
+log = { version = "0.4.14", default-features = false }
+cortex-m-log = { version = "0.7.0", features = ["log-integration", "semihosting"]}
+cortex-m-semihosting = "0.3.7"
+
+[[example]]
+name = "ping"
+required-features = ["ethernet"]
