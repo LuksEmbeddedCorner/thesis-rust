@@ -1,10 +1,10 @@
+use crate::rcc::Clocks;
 use cortex_m::interrupt;
 use smoltcp::{
     phy::{Device, DeviceCapabilities, RxToken, TxToken},
     Error,
 };
 use stm32f2::stm32f217::{ETHERNET_DMA, ETHERNET_MAC, ETHERNET_PTP, RCC, SYSCFG};
-use crate::rcc::Clocks;
 
 use super::{
     pins::EthernetPins,

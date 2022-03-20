@@ -39,8 +39,6 @@ optional = true
 [dev-dependencies]
 cortex-m-rt = "0.7.0"
 panic-halt = "0.2.0"
-log = { version = "0.4.14", default-features = false }
-cortex-m-log = { version = "0.7.0", features = ["log-integration", "semihosting"]}
 cortex-m-semihosting = "0.3.7"
 
 [[example]]

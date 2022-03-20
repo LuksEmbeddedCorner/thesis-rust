@@ -81,17 +81,6 @@ dependencies = [
 ]
 
 [[package]]
-name = "cortex-m-log"
-version = "0.7.0"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "0e202d2eac4e34adf7524a563e36623bae6f69cc0a73ef9bd22a4c93a5a806fa"
-dependencies = [
- "cortex-m",
- "cortex-m-semihosting",
- "log",
-]
-
-[[package]]
 name = "cortex-m-rt"
 version = "0.7.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -293,11 +282,9 @@ name = "stm32f207-hal"
 version = "0.1.0"
 dependencies = [
  "cortex-m",
- "cortex-m-log",
  "cortex-m-rt",
  "cortex-m-semihosting",
  "embedded-hal",
- "log",
  "nb 1.0.0",
  "panic-halt",
  "paste",

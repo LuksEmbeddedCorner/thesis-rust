@@ -1,14 +1,9 @@
 #![no_std]
 #![no_main]
 
-use cortex_m_log::{
-    log::{trick_init, Logger},
-    printer::semihosting::InterruptOk,
-};
 use cortex_m_rt::entry;
 
 use cortex_m_semihosting::hprintln;
-use log::LevelFilter;
 use panic_halt as _;
 
 // Needed for linking
@@ -36,20 +31,7 @@ use smoltcp::{
 
 #[entry]
 fn main() -> ! {
-    let logger = Logger {
-        //Uses semihosting as destination with no interrupt control.
-        inner: InterruptOk::stdout().unwrap(),
-        level: LevelFilter::Off,
-    };
-
-    // Safety: Ok to call, because logger is *basically* static
-    unsafe {
-        trick_init(&logger).unwrap();
-    }
-
     hprintln!("Starting...").unwrap();
-
-    // set up logger
 
     let peripherals = Peripherals::take().unwrap();
     let core_peripherals = cortex_m::Peripherals::take().unwrap();
